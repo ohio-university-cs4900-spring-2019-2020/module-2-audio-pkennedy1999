@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/pkennedy/CS4900/modules/NewModule/build",
+  "command": "/usr/bin/c++  -DAFTR_UNIX -I/home/pkennedy/CS4900/include/aftr -I/usr/include/SDL2 -I/usr/include/freetype2 -I/home/pkennedy/CS4900/modules/NewModule/src -I/home/pkennedy/CS4900/include/glew-2.1.0/include -I/home/pkennedy/CS4900/include/glm-0.9.8.5/glm -I/home/pkennedy/CS4900/include/lib3ds-20080909/src -I/home/pkennedy/CS4900/include/gdal-1.11.0/include -I/home/pkennedy/CS4900/include/freetype-2.5.5/include -I/home/pkennedy/CS4900/include/ode-0.13/include -I/home/mourning/CS4900/lib64/boost_1_72_0_linux -I/home/pkennedy/CS4900/modules/NewModule/src/../irrKlang-64bit-1.6.0/include    -Wall -Wextra -Wno-overloaded-virtual -Wno-unused-parameter -Wno-unknown-pragmas -Wfatal-errors  -fpermissive -std=c++17 -fdiagnostics-color=auto   -o CMakeFiles/NewModule.dir/GLViewNewModule.cpp.o -c /home/pkennedy/CS4900/modules/NewModule/src/GLViewNewModule.cpp",
+  "file": "/home/pkennedy/CS4900/modules/NewModule/src/GLViewNewModule.cpp"
+},
+{
+  "directory": "/home/pkennedy/CS4900/modules/NewModule/build",
+  "command": "/usr/bin/c++  -DAFTR_UNIX -I/home/pkennedy/CS4900/include/aftr -I/usr/include/SDL2 -I/usr/include/freetype2 -I/home/pkennedy/CS4900/modules/NewModule/src -I/home/pkennedy/CS4900/include/glew-2.1.0/include -I/home/pkennedy/CS4900/include/glm-0.9.8.5/glm -I/home/pkennedy/CS4900/include/lib3ds-20080909/src -I/home/pkennedy/CS4900/include/gdal-1.11.0/include -I/home/pkennedy/CS4900/include/freetype-2.5.5/include -I/home/pkennedy/CS4900/include/ode-0.13/include -I/home/mourning/CS4900/lib64/boost_1_72_0_linux -I/home/pkennedy/CS4900/modules/NewModule/src/../irrKlang-64bit-1.6.0/include    -Wall -Wextra -Wno-overloaded-virtual -Wno-unused-parameter -Wno-unknown-pragmas -Wfatal-errors  -fpermissive -std=c++17 -fdiagnostics-color=auto   -o CMakeFiles/NewModule.dir/NewModuleWayPoints.cpp.o -c /home/pkennedy/CS4900/modules/NewModule/src/NewModuleWayPoints.cpp",
+  "file": "/home/pkennedy/CS4900/modules/NewModule/src/NewModuleWayPoints.cpp"
+},
+{
+  "directory": "/home/pkennedy/CS4900/modules/NewModule/build",
+  "command": "/usr/bin/c++  -DAFTR_UNIX -I/home/pkennedy/CS4900/include/aftr -I/usr/include/SDL2 -I/usr/include/freetype2 -I/home/pkennedy/CS4900/modules/NewModule/src -I/home/pkennedy/CS4900/include/glew-2.1.0/include -I/home/pkennedy/CS4900/include/glm-0.9.8.5/glm -I/home/pkennedy/CS4900/include/lib3ds-20080909/src -I/home/pkennedy/CS4900/include/gdal-1.11.0/include -I/home/pkennedy/CS4900/include/freetype-2.5.5/include -I/home/pkennedy/CS4900/include/ode-0.13/include -I/home/mourning/CS4900/lib64/boost_1_72_0_linux -I/home/pkennedy/CS4900/modules/NewModule/src/../irrKlang-64bit-1.6.0/include    -Wall -Wextra -Wno-overloaded-virtual -Wno-unused-parameter -Wno-unknown-pragmas -Wfatal-errors  -fpermissive -std=c++17 -fdiagnostics-color=auto   -o CMakeFiles/NewModule.dir/main.cpp.o -c /home/pkennedy/CS4900/modules/NewModule/src/main.cpp",
+  "file": "/home/pkennedy/CS4900/modules/NewModule/src/main.cpp"
+}
+]

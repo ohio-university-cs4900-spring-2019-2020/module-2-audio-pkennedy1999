@@ -1,0 +1,995 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_05164/fast && /usr/bin/make -f CMakeFiles/cmTC_05164.dir/build.make CMakeFiles/cmTC_05164.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_05164.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_05164.dir/src.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_05164
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05164.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_05164.dir/src.c.o  -o cmTC_05164 
+CMakeFiles/cmTC_05164.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_05164.dir/build.make:86: recipe for target 'cmTC_05164' failed
+make[1]: *** [cmTC_05164] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_05164/fast' failed
+make: *** [cmTC_05164/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fa28c/fast && /usr/bin/make -f CMakeFiles/cmTC_fa28c.dir/build.make CMakeFiles/cmTC_fa28c.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fa28c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_fa28c.dir/CheckFunctionExists.c.o   -c /home/mourning/CS4900/cmake/cmake-3.16.3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fa28c
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa28c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_fa28c.dir/CheckFunctionExists.c.o  -o cmTC_fa28c  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_fa28c.dir/build.make:86: recipe for target 'cmTC_fa28c' failed
+make[1]: *** [cmTC_fa28c] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_fa28c/fast' failed
+make: *** [cmTC_fa28c/fast] Error 2
+
+
+
+Determining if the AFTR_CONFIG_USE_FONTS exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_92cbb/fast && /usr/bin/make -f CMakeFiles/cmTC_92cbb.dir/build.make CMakeFiles/cmTC_92cbb.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_92cbb.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_92cbb.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_FONTS’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_BOOST’?
+   return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_BOOST
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_92cbb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_92cbb.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_92cbb.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_92cbb/fast' failed
+make: *** [cmTC_92cbb/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_FONTS
+  return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_OVR exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9fc84/fast && /usr/bin/make -f CMakeFiles/cmTC_9fc84.dir/build.make CMakeFiles/cmTC_9fc84.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9fc84.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_9fc84.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_OVR’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_9fc84.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9fc84.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9fc84.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_9fc84/fast' failed
+make: *** [cmTC_9fc84/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_OVR
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_DK2 exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_63e35/fast && /usr/bin/make -f CMakeFiles/cmTC_63e35.dir/build.make CMakeFiles/cmTC_63e35.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_63e35.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_63e35.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_DK2’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_SDL2’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_SDL2
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_63e35.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_63e35.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_63e35.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_63e35/fast' failed
+make: *** [cmTC_63e35/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_DK2
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_KEYLOK_DONGLE exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9b0e4/fast && /usr/bin/make -f CMakeFiles/cmTC_9b0e4.dir/build.make CMakeFiles/cmTC_9b0e4.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9b0e4.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_9b0e4.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_KEYLOK_DONGLE’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_9b0e4.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9b0e4.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9b0e4.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_9b0e4/fast' failed
+make: *** [cmTC_9b0e4/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_KEYLOK_DONGLE
+  return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_63b9d/fast && /usr/bin/make -f CMakeFiles/cmTC_63b9d.dir/build.make CMakeFiles/cmTC_63b9d.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_63b9d.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_63b9d.dir/src.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_63b9d
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63b9d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_63b9d.dir/src.c.o  -o cmTC_63b9d 
+CMakeFiles/cmTC_63b9d.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_63b9d.dir/build.make:86: recipe for target 'cmTC_63b9d' failed
+make[1]: *** [cmTC_63b9d] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_63b9d/fast' failed
+make: *** [cmTC_63b9d/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b9575/fast && /usr/bin/make -f CMakeFiles/cmTC_b9575.dir/build.make CMakeFiles/cmTC_b9575.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9575.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b9575.dir/CheckFunctionExists.c.o   -c /home/mourning/CS4900/cmake/cmake-3.16.3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b9575
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9575.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_b9575.dir/CheckFunctionExists.c.o  -o cmTC_b9575  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b9575.dir/build.make:86: recipe for target 'cmTC_b9575' failed
+make[1]: *** [cmTC_b9575] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_b9575/fast' failed
+make: *** [cmTC_b9575/fast] Error 2
+
+
+
+Determining if the AFTR_CONFIG_USE_FONTS exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_591c1/fast && /usr/bin/make -f CMakeFiles/cmTC_591c1.dir/build.make CMakeFiles/cmTC_591c1.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_591c1.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_591c1.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_FONTS’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_BOOST’?
+   return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_BOOST
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_591c1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_591c1.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_591c1.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_591c1/fast' failed
+make: *** [cmTC_591c1/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_FONTS
+  return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_OVR exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0b9dd/fast && /usr/bin/make -f CMakeFiles/cmTC_0b9dd.dir/build.make CMakeFiles/cmTC_0b9dd.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b9dd.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0b9dd.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_OVR’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_0b9dd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0b9dd.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0b9dd.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_0b9dd/fast' failed
+make: *** [cmTC_0b9dd/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_OVR
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_DK2 exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b721a/fast && /usr/bin/make -f CMakeFiles/cmTC_b721a.dir/build.make CMakeFiles/cmTC_b721a.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b721a.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b721a.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_DK2’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_SDL2’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_SDL2
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_b721a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b721a.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b721a.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_b721a/fast' failed
+make: *** [cmTC_b721a/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_DK2
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_KEYLOK_DONGLE exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ea224/fast && /usr/bin/make -f CMakeFiles/cmTC_ea224.dir/build.make CMakeFiles/cmTC_ea224.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ea224.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ea224.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_KEYLOK_DONGLE’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_ea224.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ea224.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ea224.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_ea224/fast' failed
+make: *** [cmTC_ea224/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_KEYLOK_DONGLE
+  return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c78f7/fast && /usr/bin/make -f CMakeFiles/cmTC_c78f7.dir/build.make CMakeFiles/cmTC_c78f7.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c78f7.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_c78f7.dir/src.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c78f7
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c78f7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_c78f7.dir/src.c.o  -o cmTC_c78f7 
+CMakeFiles/cmTC_c78f7.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c78f7.dir/build.make:86: recipe for target 'cmTC_c78f7' failed
+make[1]: *** [cmTC_c78f7] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_c78f7/fast' failed
+make: *** [cmTC_c78f7/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_226c9/fast && /usr/bin/make -f CMakeFiles/cmTC_226c9.dir/build.make CMakeFiles/cmTC_226c9.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_226c9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_226c9.dir/CheckFunctionExists.c.o   -c /home/mourning/CS4900/cmake/cmake-3.16.3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_226c9
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_226c9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_226c9.dir/CheckFunctionExists.c.o  -o cmTC_226c9  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_226c9.dir/build.make:86: recipe for target 'cmTC_226c9' failed
+make[1]: *** [cmTC_226c9] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_226c9/fast' failed
+make: *** [cmTC_226c9/fast] Error 2
+
+
+
+Determining if the AFTR_CONFIG_USE_FONTS exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d58bf/fast && /usr/bin/make -f CMakeFiles/cmTC_d58bf.dir/build.make CMakeFiles/cmTC_d58bf.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d58bf.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d58bf.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_FONTS’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_BOOST’?
+   return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_BOOST
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_d58bf.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d58bf.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d58bf.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_d58bf/fast' failed
+make: *** [cmTC_d58bf/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_FONTS
+  return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_OVR exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ee2f9/fast && /usr/bin/make -f CMakeFiles/cmTC_ee2f9.dir/build.make CMakeFiles/cmTC_ee2f9.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ee2f9.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ee2f9.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_OVR’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_ee2f9.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ee2f9.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ee2f9.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_ee2f9/fast' failed
+make: *** [cmTC_ee2f9/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_OVR
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_DK2 exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5756e/fast && /usr/bin/make -f CMakeFiles/cmTC_5756e.dir/build.make CMakeFiles/cmTC_5756e.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5756e.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_5756e.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_DK2’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_SDL2’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_SDL2
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_5756e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_5756e.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5756e.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_5756e/fast' failed
+make: *** [cmTC_5756e/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_DK2
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_KEYLOK_DONGLE exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_31dcb/fast && /usr/bin/make -f CMakeFiles/cmTC_31dcb.dir/build.make CMakeFiles/cmTC_31dcb.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_31dcb.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_31dcb.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_KEYLOK_DONGLE’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_31dcb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_31dcb.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_31dcb.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_31dcb/fast' failed
+make: *** [cmTC_31dcb/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_KEYLOK_DONGLE
+  return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e81d6/fast && /usr/bin/make -f CMakeFiles/cmTC_e81d6.dir/build.make CMakeFiles/cmTC_e81d6.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e81d6.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_e81d6.dir/src.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e81d6
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e81d6.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_e81d6.dir/src.c.o  -o cmTC_e81d6 
+CMakeFiles/cmTC_e81d6.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e81d6.dir/build.make:86: recipe for target 'cmTC_e81d6' failed
+make[1]: *** [cmTC_e81d6] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_e81d6/fast' failed
+make: *** [cmTC_e81d6/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_04f32/fast && /usr/bin/make -f CMakeFiles/cmTC_04f32.dir/build.make CMakeFiles/cmTC_04f32.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04f32.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_04f32.dir/CheckFunctionExists.c.o   -c /home/mourning/CS4900/cmake/cmake-3.16.3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_04f32
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04f32.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_04f32.dir/CheckFunctionExists.c.o  -o cmTC_04f32  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_04f32.dir/build.make:86: recipe for target 'cmTC_04f32' failed
+make[1]: *** [cmTC_04f32] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_04f32/fast' failed
+make: *** [cmTC_04f32/fast] Error 2
+
+
+
+Determining if the AFTR_CONFIG_USE_FONTS exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2d4d9/fast && /usr/bin/make -f CMakeFiles/cmTC_2d4d9.dir/build.make CMakeFiles/cmTC_2d4d9.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d4d9.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2d4d9.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_FONTS’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_BOOST’?
+   return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_BOOST
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_2d4d9.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2d4d9.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2d4d9.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_2d4d9/fast' failed
+make: *** [cmTC_2d4d9/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_FONTS
+  return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_OVR exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e25c6/fast && /usr/bin/make -f CMakeFiles/cmTC_e25c6.dir/build.make CMakeFiles/cmTC_e25c6.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e25c6.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e25c6.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_OVR’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_e25c6.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e25c6.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e25c6.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_e25c6/fast' failed
+make: *** [cmTC_e25c6/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_OVR
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_DK2 exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0ed94/fast && /usr/bin/make -f CMakeFiles/cmTC_0ed94.dir/build.make CMakeFiles/cmTC_0ed94.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0ed94.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0ed94.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_DK2’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_SDL2’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_SDL2
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_0ed94.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0ed94.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0ed94.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_0ed94/fast' failed
+make: *** [cmTC_0ed94/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_DK2
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_KEYLOK_DONGLE exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_87c83/fast && /usr/bin/make -f CMakeFiles/cmTC_87c83.dir/build.make CMakeFiles/cmTC_87c83.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_87c83.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_87c83.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_KEYLOK_DONGLE’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_87c83.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_87c83.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_87c83.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_87c83/fast' failed
+make: *** [cmTC_87c83/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_KEYLOK_DONGLE
+  return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d46d0/fast && /usr/bin/make -f CMakeFiles/cmTC_d46d0.dir/build.make CMakeFiles/cmTC_d46d0.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d46d0.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d46d0.dir/src.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d46d0
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d46d0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_d46d0.dir/src.c.o  -o cmTC_d46d0 
+CMakeFiles/cmTC_d46d0.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_d46d0.dir/build.make:86: recipe for target 'cmTC_d46d0' failed
+make[1]: *** [cmTC_d46d0] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_d46d0/fast' failed
+make: *** [cmTC_d46d0/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_dc32c/fast && /usr/bin/make -f CMakeFiles/cmTC_dc32c.dir/build.make CMakeFiles/cmTC_dc32c.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dc32c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_dc32c.dir/CheckFunctionExists.c.o   -c /home/mourning/CS4900/cmake/cmake-3.16.3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dc32c
+/home/mourning/CS4900/cmake/cmake-3.16.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc32c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_dc32c.dir/CheckFunctionExists.c.o  -o cmTC_dc32c  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_dc32c.dir/build.make:86: recipe for target 'cmTC_dc32c' failed
+make[1]: *** [cmTC_dc32c] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_dc32c/fast' failed
+make: *** [cmTC_dc32c/fast] Error 2
+
+
+
+Determining if the AFTR_CONFIG_USE_FONTS exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b651e/fast && /usr/bin/make -f CMakeFiles/cmTC_b651e.dir/build.make CMakeFiles/cmTC_b651e.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b651e.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b651e.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_FONTS’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_BOOST’?
+   return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_BOOST
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_b651e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b651e.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b651e.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_b651e/fast' failed
+make: *** [cmTC_b651e/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_FONTS
+  return ((int*)(&AFTR_CONFIG_USE_FONTS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_OVR exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_aac03/fast && /usr/bin/make -f CMakeFiles/cmTC_aac03.dir/build.make CMakeFiles/cmTC_aac03.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aac03.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_aac03.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_OVR’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_aac03.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_aac03.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_aac03.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_aac03/fast' failed
+make: *** [cmTC_aac03/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_OVR
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_OVR))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_OCULUS_RIFT_DK2 exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7990f/fast && /usr/bin/make -f CMakeFiles/cmTC_7990f.dir/build.make CMakeFiles/cmTC_7990f.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7990f.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7990f.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_OCULUS_RIFT_DK2’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_SDL2’?
+   return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_SDL2
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_7990f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7990f.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7990f.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_7990f/fast' failed
+make: *** [cmTC_7990f/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_OCULUS_RIFT_DK2
+  return ((int*)(&AFTR_CONFIG_USE_OCULUS_RIFT_DK2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the AFTR_CONFIG_USE_KEYLOK_DONGLE exist failed with the following output:
+Change Dir: /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6dd04/fast && /usr/bin/make -f CMakeFiles/cmTC_6dd04.dir/build.make CMakeFiles/cmTC_6dd04.dir/build
+make[1]: Entering directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6dd04.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6dd04.dir/CheckSymbolExists.c.o   -c /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘AFTR_CONFIG_USE_KEYLOK_DONGLE’ undeclared (first use in this function); did you mean ‘AFTR_CONFIG_USE_OGL_GLEW’?
+   return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   AFTR_CONFIG_USE_OGL_GLEW
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_6dd04.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6dd04.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6dd04.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_6dd04/fast' failed
+make: *** [cmTC_6dd04/fast] Error 2
+
+
+File /home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </home/pkennedy/CS4900/include/aftr/AftrConfig.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AFTR_CONFIG_USE_KEYLOK_DONGLE
+  return ((int*)(&AFTR_CONFIG_USE_KEYLOK_DONGLE))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

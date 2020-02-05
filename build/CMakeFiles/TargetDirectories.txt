@@ -1,0 +1,3 @@
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/rebuild_cache.dir
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/NewModule.dir
+/home/pkennedy/CS4900/modules/NewModule/build/CMakeFiles/edit_cache.dir
